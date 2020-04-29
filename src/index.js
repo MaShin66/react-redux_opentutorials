@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import store from './store';
 
 ReactDOM.render(
-  <React.StrictMode>
+  // 이렇게 Provider 를 써서 전달해주면 모든 컴포넌트에서 store 에 접근 가능
+  <Provider store={ store }>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
